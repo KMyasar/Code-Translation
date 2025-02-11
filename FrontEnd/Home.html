@@ -7,24 +7,47 @@
     <title>Document</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
+            overflow-x: hidden;
         }
+
         body {
             display: flex;
             flex-direction: column;
+            position: relative;
         }
+
+        #sidebar {
+            position: fixed;
+            width: 250px;
+            height: 100vh;
+            left: -250px;
+            top: 0;
+            transition: 0.3s;
+            z-index: 1000;
+            padding-top: 60px;
+            overflow-y: auto;
+            /* Added to handle sidebar content overflow */
+        }
+
         main {
             flex: 1;
+            margin-left: 0;
+            transition: 0.3s;
         }
+
         .footer {
             background-color: transparent;
         }
+
         .logo {
             position: absolute;
             top: 10px;
             left: 10px;
         }
+
         .challenge-box {
             background-color: white;
             padding: 20px;
@@ -41,11 +64,9 @@
             <a class="navbar-brand" href="#">
                 <img src="Assets/Logo.svg" alt="">
             </a>
-            </div>
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -74,11 +95,11 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
-                            Progress <img src="Assets/Icons/caret-fill.svg" alt=""/>
+                            Progress <img src="Assets/Icons/caret-fill.svg" alt="" />
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Solved
-                            <img src="Assets/Icons/caret-fill.svg" alt=""/></a>
+                            <img src="Assets/Icons/caret-fill.svg" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -86,8 +107,11 @@
     </header>
     <main class="d-flex justify-content-between align-items-center" style="height: 100%;">
         <section class="text-left ml-5" style="width: 60%;">
-            <h4 style="color: white; font-family: 'IBM Plex Mono', monospace; font-weight: bold;">Welcome to the Code Conversion Challenge!</h4><br>
-            <p style="color: white; font-family: 'IBM Plex Mono', monospace;">Are you ready to put your programming skills to the test? The Code Conversion Challenge pushes your ability to transform code from one programming language to another while maintaining functionality, efficiency, and readability.</p>
+            <h4 style="color: white; font-family: 'IBM Plex Mono', monospace; font-weight: bold;">Welcome to the Code
+                Conversion Challenge!</h4><br>
+            <p style="color: white; font-family: 'IBM Plex Mono', monospace;">Are you ready to put your programming
+                skills to the test? The Code Conversion Challenge pushes your ability to transform code from one
+                programming language to another while maintaining functionality, efficiency, and readability.</p>
             <div class="row justify-content-center mt-4">
                 <div class="col-md-4">
                     <a href="beginner.html" class="text-decoration-none">
@@ -110,8 +134,8 @@
                 <div class="col-md-4">
                     <a href="advanced.html" class="text-decoration-none">
                         <div class="challenge-box">
-                            <h5>ADVANCE</h5>
-                            <p>Handling complex logic, optimizing conversions.</p>
+                            <h5>ADVANCED</h5>
+                            <p>Complex algorithms and advanced concepts.</p>
                             <span class="badge badge-danger">Premium</span>
                         </div>
                     </a>
@@ -119,12 +143,64 @@
             </div>
         </section>
         <section class="text-right mr-5" style="width: 35%;">
-            <img src="Assets/2989869.jpg" alt="Code Conversion Challenge" style="width: 80%; height: 100%; object-fit: contain;">
+            <img src="Assets/2989869.jpg" alt="Code Conversion Challenge"
+                style="width: 80%; height: 100%; object-fit: contain;">
         </section>
-        
+
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-dark text-white d-flex flex-column" style="height: 100vh;">
+            <div class="p-3">
+                <h5>Code Conversion</h5>
+                <ul class="nav flex-column">
+                    <!-- Top Section -->
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Settings</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Support</a></li>
+                    <div class="dropdown-divider"></div>
+                </ul>
+            </div>
+
+            <!-- Spacer to push the bottom content down -->
+            <div class="flex-grow-1"></div>
+
+            <div class="p-3">
+                <ul class="nav flex-column">
+                    <!-- Bottom Section -->
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Subscription</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Mohamed</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-white">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebarToggle" class="btn position-fixed text-white"
+            style="left: 10px; bottom: 20px; z-index: 1001; width: 50px; height: 50px;">
+            <img src="Assets/Icons/sidebar.svg" alt="Open" id="openIcon" style="display: block;">
+            <img src="Assets/Icons/sidebar.svg" alt="Close" id="closeIcon" style="display: none;">
+            <script>
+                document.getElementById('sidebarToggle').addEventListener('click', function () {
+                    const sidebar = document.getElementById('sidebar');
+                    const openIcon = document.getElementById('openIcon');
+                    const closeIcon = document.getElementById('closeIcon');
+                    const main = document.querySelector('main');
+
+                    if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+                        sidebar.style.left = '0';
+                        main.style.marginLeft = '250px';
+                        openIcon.style.display = 'none';
+                        closeIcon.style.display = 'block';
+                    } else {
+                        sidebar.style.left = '-250px';
+                        main.style.marginLeft = '0';
+                        openIcon.style.display = 'block';
+                        closeIcon.style.display = 'none';
+                    }
+                });
+                closeIcon.style.display = 'none';
+            </script>
     </main>
     <footer class="footer fixed-bottom">
-        <div class="container-fluid"></div>
+        <div class="container-fluid">
             <div class="d-flex justify-content-end py-3">
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item"><img src="Assets/Icons/icons8-instagram.svg" alt="Instagram"></li>
