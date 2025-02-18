@@ -3,46 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>signup-page</title>
-    <link rel="stylesheet" href="./loginpage.css" />
+    <title>Signup Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="code">
-      <img class="code" src="./image/Logo.svg" alt="" />
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="opacity: 0.5;">
+        <a class="navbar-brand" href="#">
+          <img src="Assets/images/Logo.svg" alt="Logo" />
+        </a>
+      </nav>
     </header>
-    <div class="Loginpage">
-      <div class="left-side">
-        <p>“Make your Code Converse easier By just one Click”</p>
-        <img src="./image/video sample.jpg" alt="" />
+    
+    <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <div class="container d-flex justify-content-between align-items-center w-75">
+        <!-- Left Section -->
+        <div class="left-content text-center" style="color: white;">
+          <p style="font-family: 'Courier New', Courier, monospace;">"Make your Code Conversion easier with just one Click"</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    
+        <!-- Right Section (Signup Form + Google Sign-in) -->
+        <div class="d-flex flex-column align-items-center">
+          <div class="form-container text-center">
+            <h1>Create Your Account</h1>
+            <p><b>Sign up to Code Conversion</b></p>
+            <form>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Enter your email" required />
+    
+              <label for="phone">Phone</label>
+              <input type="number" name="phone" id="phone" placeholder="Enter your phone number" required />
+    
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" placeholder="Enter your password" required />
+    
+              <button type="submit" class="btn-sign">Sign Up</button>
+            </form>
+    
+            <div class="mt-2" style="text-align: left;">
+              <a href="./loginpage.html">Already have an account? <span>Sign in</span></a>
+            </div>
+          </div>
+          <hr style="color: white;">
+          
+          <!-- Google Sign-up button -->
+          <div class="mt-3">
+            <button class="google-btn">
+              <img src="Assets/Icons/icons8-google-20.png" alt="Google Icon" style="width: 20px; margin-right: 8px;"> 
+              Sign up with Google
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="right-side">
-        <p>Create Your Own Code Conversion Account</p>
-        <form class="form">
-          <p class="email">Email</p>
-          <input type="email" name="email" id="email" />
-          <p class="email">Phone</p>
-          <input type="number" name="Phone" id="Phone" />
-          <p class="email">Password</p>
-          <input type="password" name="password" id="password" />
-        </form>
-        <a href=""><p class="dont">Already have an account</p></a>
-        <button class="btn-sign">Sign in</button>
-
-        <hr />
-        <button class="btn-google">
-          <img src="./image/icons8-google-20.png" />
-          <a href="">sign in with google</a>
-        </button>
+    </main>
+    
+    <footer class="footer fixed-bottom">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-end py-3">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><img src="Assets/Icons/icons8-instagram.svg" alt="Instagram"></li>
+            <li class="list-inline-item"><img src="Assets/Icons/x.svg" alt="X"></li>
+            <li class="list-inline-item"><img src="Assets/Icons/git.svg" alt="GitHub"></li>
+            <li class="list-inline-item"><a class="text-white" href="#">Terms of Service</a></li>
+            <li class="list-inline-item"><a class="text-white" href="#">Privacy Policy</a></li>
+            <li class="list-inline-item"><a class="text-white" href="#">Code Conversion</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <footer id="footers">
-      <img src="./image/x.svg" alt="" />
-      <img src="./image/icons8-instagram.svg" alt="" />
-      <img src="./image/git.svg" alt="" />
-      <a class="foot">. Terms of Service</a>
-      <a class="foot">. Privacy Policy</a>
-      <a class="foot">. Code Convertion</a>
     </footer>
   </body>
 </html>
