@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code Conversion Challenge</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         html,
@@ -17,6 +17,10 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            background-image: url('Assets/bg-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         #sidebar {
@@ -29,13 +33,14 @@
             z-index: 1000;
             padding-top: 60px;
             overflow-y: auto;
-            /* Added to handle sidebar content overflow */
+            overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
         main {
             flex: 1;
             margin-left: 0;
             transition: 0.3s;
+            padding-bottom: 60px; /* Prevent footer overlap */
         }
 
         .footer {
@@ -57,12 +62,12 @@
     </style>
 </head>
 
-<body background="Assets/bg-image.jpg">
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
             <div class="logo"></div>
             <a class="navbar-brand" href="#">
-                <img src="Assets/Logo.svg" alt="">
+                <img src="Assets/Logo.svg" alt="Logo">
             </a>
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -91,15 +96,15 @@
                 <div class="dropdown dropleft">
                     <button class="btn btn-primary bg-transparent border-0" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="Assets/Icons/menu.svg" alt="">
+                        <img src="Assets/Icons/menu.svg" alt="Menu">
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
-                            Progress <img src="Assets/Icons/caret-fill.svg" alt="" />
+                            Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret">
                         </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Solved
-                            <img src="Assets/Icons/caret-fill.svg" alt="" /></a>
+                            <img src="Assets/Icons/caret-fill.svg" alt="Caret"></a>
                     </div>
                 </div>
             </div>
@@ -148,7 +153,7 @@
         </section>
 
         <!-- Sidebar -->
-        <div id="sidebar" class="bg-dark text-white d-flex flex-column" style="height: 100vh;">
+        <aside id="sidebar" class="bg-dark text-white d-flex flex-column" style="height: 100vh;">
             <div class="p-3">
                 <h5>Code Conversion</h5>
                 <ul class="nav flex-column">
@@ -170,34 +175,14 @@
                     <li class="nav-item"><a href="#" class="nav-link text-white">Sign out</a></li>
                 </ul>
             </div>
-        </div>
+        </aside>
 
         <!-- Sidebar Toggle Button -->
         <button id="sidebarToggle" class="btn position-fixed text-white"
             style="left: 10px; bottom: 20px; z-index: 1001; width: 50px; height: 50px;">
             <img src="Assets/Icons/sidebar.svg" alt="Open" id="openIcon" style="display: block;">
             <img src="Assets/Icons/sidebar.svg" alt="Close" id="closeIcon" style="display: none;">
-            <script>
-                document.getElementById('sidebarToggle').addEventListener('click', function () {
-                    const sidebar = document.getElementById('sidebar');
-                    const openIcon = document.getElementById('openIcon');
-                    const closeIcon = document.getElementById('closeIcon');
-                    const main = document.querySelector('main');
-
-                    if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
-                        sidebar.style.left = '0';
-                        main.style.marginLeft = '250px';
-                        openIcon.style.display = 'none';
-                        closeIcon.style.display = 'block';
-                    } else {
-                        sidebar.style.left = '-250px';
-                        main.style.marginLeft = '0';
-                        openIcon.style.display = 'block';
-                        closeIcon.style.display = 'none';
-                    }
-                });
-                closeIcon.style.display = 'none';
-            </script>
+        </button>
     </main>
     <footer class="footer fixed-bottom">
         <div class="container-fluid">
@@ -213,9 +198,36 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+    const sidebar = document.getElementById('sidebar');
+    const openIcon = document.getElementById('openIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    const main = document.querySelector('main');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+        sidebar.style.left = '0';
+        main.style.marginLeft = '250px';
+        openIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+        sidebarToggle.style.left = '200px'; // Move the toggle button to the right of the sidebar
+        sidebarToggle.style.bottom = "10px";
+    } else {
+        sidebar.style.left = '-250px';
+        main.style.marginLeft = '0';
+        openIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+        sidebarToggle.style.left = '10px'; // Move the toggle button back to original position
+    }
+});
+
+// Ensure the close icon is hidden initially
+document.getElementById('closeIcon').style.display = 'none';
+    </script>
 </body>
 
 </html>
