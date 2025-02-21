@@ -48,14 +48,14 @@ nav a {
 .code-box:last-child {
     border-right: none;
 }
-.dropdown {
+/* .dropdown {
     background: white;
     color: black;
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
     width: 100%;
-}
+} Replaced with Interline css Because of Overlapsed*/ 
 textarea {
     width: 100%;
     height: 150px;
