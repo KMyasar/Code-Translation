@@ -5,69 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Conversion Challenge</title>
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        html,
-        body {
-            height: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            background-image: url('Assets/bg-image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        #sidebar {
-            position: fixed;
-            width: 250px;
-            height: 100vh;
-            left: -250px;
-            top: 0;
-            transition: 0.3s;
-            z-index: 1000;
-            padding-top: 60px;
-            overflow-y: auto;
-            overflow-x: hidden; /* Prevent horizontal overflow */
-        }
-
-        main {
-            flex: 1;
-            margin-left: 0;
-            transition: 0.3s;
-            padding-bottom: 60px; /* Prevent footer overlap */
-        }
-
-        .footer {
-            background-color: transparent;
-        }
-
-        .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .challenge-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="opacity: 0.5;">
             <div class="logo"></div>
-            <a class="navbar-brand" href="#">
-                <img src="Assets/Logo.svg" alt="Logo">
+            <a class="navbar-brand" href="Home.html">
+                <img src="Assets/images/Logo.svg" alt="Logo">
             </a>
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -119,7 +66,7 @@
                 programming language to another while maintaining functionality, efficiency, and readability.</p>
             <div class="row justify-content-center mt-4">
                 <div class="col-md-4">
-                    <a href="beginner.html" class="text-decoration-none">
+                    <a href="beginner-taskpage.html" class="text-decoration-none">
                         <div class="challenge-box">
                             <h5>BEGINNER</h5>
                             <p>Simple programs, syntax conversion, and basic logic.</p>
@@ -148,7 +95,7 @@
             </div>
         </section>
         <section class="text-right mr-5" style="width: 35%;">
-            <img src="Assets/2989869.jpg" alt="Code Conversion Challenge"
+            <img src="Assets/images/2989869.jpg" alt="Code Conversion Challenge"
                 style="width: 80%; height: 100%; object-fit: contain;">
         </section>
 

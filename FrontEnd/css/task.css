@@ -1,0 +1,67 @@
+body {
+    background: url(../Assets/images/bg-image.jpg);
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    padding: 10px;
+    font-size: 18px;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+.level {
+    background: gray;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+.container {
+    margin: 50px auto;
+    width: 60%;
+}
+.prompt-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.code-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.code-box {
+    width: 50%;
+    padding: 20px;
+    border-right: 1px solid white;
+    text-align: left;
+}
+.code-box:last-child {
+    border-right: none;
+}
+/* .dropdown {
+    background: white;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+} Replaced with Interline css Because of Overlapsed*/ 
+textarea {
+    width: 100%;
+    height: 150px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-family: monospace;
+}
