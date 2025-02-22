@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: url(Assets/images/bg-image.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .left img {
+            width: 150px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .left img:hover {
+            transform: scale(1.1) rotate(7deg);
+        }
+        .tilt {
+            will-change: transform;
+        }
+        .right {
+            flex: 1;
+            padding: 20px;
+        }
+        .right h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background: rgb(17, 4, 117);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: rgb(91, 64, 214);
+        }
+        .home-button {
+            padding: 10px 20px;
+            background: rgb(25, 4, 96);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background: rgb(67, 2, 218);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left contact100-pic js-tilt tilt" data-tilt>
+            <img src="./Assets/images/msg-contact.png" alt="Envelope Animation">
+        </div>
+        <div class="right">
+            <h2>Get in touch</h2>
+            <input type="text" class="input-box" placeholder="Name">
+            <input type="email" class="input-box" placeholder="Email">
+            <textarea class="input-box" placeholder="Message..."></textarea>
+            <button class="button">Send</button>
+        </div>
+    </div>
+    <a href="./Home.html" class="home-button">Back to Home</a>
+    <script>
+        $(document).ready(function(){
+            $('.js-tilt').tilt({
+                scale: 1.1
+            });
+        });
+    </script>
+</body>
+</html>
