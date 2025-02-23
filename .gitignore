@@ -53,3 +53,8 @@ bower_components/
 
 # Optional local development files
 .local/
+
+#files
+test.html
+test.php
+test.js

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Conversion Challenge</title>
+    <link rel="icon" href="Assets/Icons/icons8-registry-editor-96.png" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -96,16 +97,19 @@
         </section>
         <section class="text-right mr-5" style="width: 35%;">
             <img src="Assets/images/2989869.jpg" alt="Code Conversion Challenge"
-                style="width: 80%; height: 100%; object-fit: contain;">
+                style="width: 80%; height: 100%; object-fit: contain;border-radius: 3.1%;">
         </section>
 
         <!-- Sidebar -->
-        <aside id="sidebar" class="bg-dark text-white d-flex flex-column" style="height: 100vh;">
+        <aside id="sidebar" class="bg-dark text-white d-flex flex-column" style="height: 100vh;background-color: black !important;">
             <div class="p-3">
                 <h5>Code Conversion</h5>
                 <ul class="nav flex-column">
                     <!-- Top Section -->
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Settings</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white" data-toggle="modal"
+                            data-target="#settingsModal">Settings</a>
+                    </li>
                     <li class="nav-item"><a href="#" class="nav-link text-white">Support</a></li>
                     <div class="dropdown-divider"></div>
                 </ul>
@@ -130,6 +134,7 @@
             <img src="Assets/Icons/sidebar.svg" alt="Open" id="openIcon" style="display: block;">
             <img src="Assets/Icons/sidebar.svg" alt="Close" id="closeIcon" style="display: none;">
         </button>
+
     </main>
     <footer class="footer fixed-bottom">
         <div class="container-fluid">
@@ -150,30 +155,57 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         document.getElementById('sidebarToggle').addEventListener('click', function () {
-    const sidebar = document.getElementById('sidebar');
-    const openIcon = document.getElementById('openIcon');
-    const closeIcon = document.getElementById('closeIcon');
-    const main = document.querySelector('main');
-    const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('sidebar');
+            const openIcon = document.getElementById('openIcon');
+            const closeIcon = document.getElementById('closeIcon');
+            const main = document.querySelector('main');
+            const sidebarToggle = document.getElementById('sidebarToggle');
 
-    if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
-        sidebar.style.left = '0';
-        main.style.marginLeft = '250px';
-        openIcon.style.display = 'none';
-        closeIcon.style.display = 'block';
-        sidebarToggle.style.left = '200px'; // Move the toggle button to the right of the sidebar
-        sidebarToggle.style.bottom = "10px";
-    } else {
-        sidebar.style.left = '-250px';
-        main.style.marginLeft = '0';
-        openIcon.style.display = 'block';
-        closeIcon.style.display = 'none';
-        sidebarToggle.style.left = '10px'; // Move the toggle button back to original position
-    }
-});
+            if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+                sidebar.style.left = '0';
+                main.style.marginLeft = '250px';
+                openIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+                sidebarToggle.style.left = '200px'; // Move the toggle button to the right of the sidebar
+                sidebarToggle.style.bottom = "10px";
+            } else {
+                sidebar.style.left = '-250px';
+                main.style.marginLeft = '0';
+                openIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+                sidebarToggle.style.left = '10px'; // Move the toggle button back to original position
+            }
+        });
 
-// Ensure the close icon is hidden initially
-document.getElementById('closeIcon').style.display = 'none';
+        // Ensure the close icon is hidden initially
+        document.getElementById('closeIcon').style.display = 'none';
+    </script>
+
+    <script>
+        // Fetch and include settings modal
+        fetch("settings.html")
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML("beforeend", data);
+            });
+    </script>
+    <!-- Settings Modal -->
+    <script>
+        function showTab(event, tab) {
+            event.preventDefault();
+            const content = {
+                general: "<h6>Chat</h6><p>Show tokens usage in chat</p>",
+                profile: "<h6>Details</h6><p>Email</p><p>Phone</p>",
+                tokens: "<h6>Usage</h6><p>Available Token</p><p>Total Tokens</p>",
+                editor: "<h6>Edit</h6><p>Line warpping</p>",
+                sessions: "<h6>Active Logins</h6><p>location : chennai </p><p>Time : 2:29pm</p><p>Device : Chrome(windows)</p>"
+            };
+            document.getElementById("settingsContent").innerHTML = content[tab];
+
+            // Remove 'active' class from all nav links
+            document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
+            event.target.classList.add("active");
+        }
     </script>
 </body>
 

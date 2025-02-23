@@ -3,117 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <title>Subscription Plans</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Poppins', sans-serif;
-        }
         body {
-            background: url(Assets/images/bg-image.jpg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background:url(./Assets/images/bg-image.jpg);
+            color: white;
+            font-family: Arial, sans-serif;
             height: 100vh;
-            flex-direction: column;
-        }
-        .container {
-            background: white;
             display: flex;
             align-items: center;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
-        .left {
-            flex: 1;
-            display: flex;
             justify-content: center;
-            align-items: center;
-            position: relative;
+            text-align: center;
         }
-        .left img {
-            width: 150px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .left img:hover {
-            transform: scale(1.1) rotate(7deg);
-        }
-        .tilt {
-            will-change: transform;
-        }
-        .right {
-            flex: 1;
+
+        .pricing-container {
+            max-width: 850px;
+            height: 450px;
             padding: 20px;
+            background: black;
+            border-radius: 10px;
         }
-        .right h2 {
-            margin-bottom: 20px;
-            font-size: 22px;
+
+        .card {
+            background: whitesmoke;
+            color: black;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            transition: transform 0.3s;
         }
-        .input-box {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            outline: none;
+
+        .card:hover {
+            transform: scale(1.05);
         }
-        .button {
-            width: 100%;
-            padding: 10px;
-            background: rgb(17, 4, 117);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.5rem;
         }
-        .button:hover {
-            background: rgb(91, 64, 214);
+
+        .discounted-price {
+            text-decoration: line-through;
+            color: red;
         }
-        .home-button {
+
+        .btn-custom {
+            background: white;
+            color: black;
+            border-radius: 12px;
             padding: 10px 20px;
-            background: rgb(25, 4, 96);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
         }
-        .home-button:hover {
-            background: rgb(67, 2, 218);
+
+        .back-home {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left contact100-pic js-tilt tilt" data-tilt>
-            <img src="./Assets/images/msg-contact.png" alt="Envelope Animation">
-        </div>
-        <div class="right">
-            <h2>Get in touch</h2>
-            <input type="text" class="input-box" placeholder="Name">
-            <input type="email" class="input-box" placeholder="Email">
-            <textarea class="input-box" placeholder="Message..."></textarea>
-            <button class="button">Send</button>
+    <div class="container pricing-container">
+        <h2 class="mb-5">Subscription</h2>
+        <div class="row g-4">
+            <!-- Monthly Plan -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4 class="card-title">Personal</h4>
+                    <h2>₹50<span class="fs-5">/mo</span></h2>
+                    <ul class="list-unstyled text-start">
+                        <li>• Unlimited Task Generate</li>
+                        <li>• AI Framed Questions</li>
+                        <li>• Multiple Language Support</li>
+                        <li>• Access beta version</li>
+                    </ul>
+                    <a href="#" class="btn btn-custom">Purchase</a>
+                </div>
+            </div>
+
+            <!-- Yearly Plan -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4 class="card-title">Personal</h4>
+                    <h2><span class="discounted-price">₹600</span> ₹500<span class="fs-5">/yr</span></h2>
+                    <ul class="list-unstyled text-start">
+                        <li>• Unlimited Task Generate</li>
+                        <li>• AI Framed Questions</li>
+                        <li>• Multiple Language Support</li>
+                        <li>• Access beta version</li>
+                    </ul>
+                    <a href="#" class="btn btn-custom">Purchase</a>
+                </div>
+            </div>
+
+            <!-- Education Plan -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4 class="card-title">Education</h4>
+                    <h2>📞 Contact</h2>
+                    <ul class="list-unstyled text-start">
+                        <li>• Specific Tasks</li>
+                        <li>• Age based Q/A</li>
+                        <li>• Multiple language support</li>
+                    </ul>
+                    <a href="#" class="btn btn-custom">Purchase</a>
+                </div>
+            </div>
         </div>
     </div>
-    <a href="./Home.html" class="home-button">Back to Home</a>
-    <script>
-        $(document).ready(function(){
-            $('.js-tilt').tilt({
-                scale: 1.1
-            });
-        });
-    </script>
+
+    <!-- Back Home Button -->
+    <div class="back-home">
+        <a href="Home.html" class="btn btn-light">Back Home</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"> </script>
 </body>
 </html>
