@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 html,
 main {
   height: 100vh;
+}
+*{
+  font-family: 'Poppins', sans-serif;
 }
 .challenge-box {
   background-color: white;
@@ -56,10 +61,12 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-image: url("../Assets/images/bg-image.jpg");
-  background-size: cover;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(0,212,255,1) 100%);
+  /* background-image: url("../Assets/images/bg-image.jpg"); */
+  /* background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 #sidebar {

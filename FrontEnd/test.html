@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background:url(./Assets/images/bg-image.jpg);
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .pricing-container {
+            max-width: 850px;
+            height: 450px;
+            padding: 20px;
+            background: black;
+            border-radius: 10px;
+        }
+
+        .card {
+            background: whitesmoke;
+            color: black;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .discounted-price {
+            text-decoration: line-through;
+            color: red;
+        }
+
+        .btn-custom {
+            background: white;
+            color: black;
+            border-radius: 12px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .back-home {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container pricing-container">
+        <h2 class="mb-5">Subscription</h2>
+        <div class="row g-4">
+            <!-- Monthly Plan -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4 class="card-title">Personal</h4>
+                    <h2>₹50<span class="fs-5">/mo</span></h2>
+                    <ul class="list-unstyled text-start">
+                        <li>• Unlimited Task Generate</li>
+                        <li>• AI Framed Questions</li>
+                        <li>• Multiple Language Support</li>
+                        <li>• Access beta version</li>
+                    </ul>
+                    <a href="#" class="btn btn-custom">Purchase</a>
+                </div>
+            </div>
+
+            <!-- Yearly Plan -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4 class="card-title">Personal</h4>
+                    <h2><span class="discounted-price">₹600</span> ₹500<span class="fs-5">/yr</span></h2>
+                    <ul class="list-unstyled text-start">
+                        <li>• Unlimited Task Generate</li>
+                        <li>• AI Framed Questions</li>
+                        <li>• Multiple Language Support</li>
+                        <li>• Access beta version</li>
+                    </ul>
+                    <a href="#" class="btn btn-custom">Purchase</a>
+                </div>
+            </div>
+
+            <!-- Education Plan -->
+            <div class="col-md-4">
+                <div class="card">
+                    <h4 class="card-title">Education</h4>
+                    <h2>📞 Contact</h2>
+                    <ul class="list-unstyled text-start">
+                        <li>• Specific Tasks</li>
+                        <li>• Age based Q/A</li>
+                        <li>• Multiple language support</li>
+                    </ul>
+                    <a href="#" class="btn btn-custom">Purchase</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Home Button -->
+    <div class="back-home">
+        <a href="Home.html" class="btn btn-light">Back Home</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"> </script>
+</body>
+</html>
