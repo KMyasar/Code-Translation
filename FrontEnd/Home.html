@@ -7,7 +7,20 @@
     <title>Code Conversion Challenge</title>
     <link rel="icon" href="Assets/Icons/icons8-registry-editor-96.png" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for dropdown positioning */
+        .dropdown-menu-custom {
+            left: -100px !important; /* Adjust this value to align the dropdown */
+            top: 100% !important; /* Position below the icon */
+        }
+
+        /* Custom CSS for the toggle menu */
+        .dropdown-toggle::after {
+            display: none; /* Hide the default Bootstrap dropdown arrow */
+        }
+    </style>
 </head>
 
 <body>
@@ -18,7 +31,7 @@
                 <img src="Assets/images/Logo.svg" alt="Logo">
             </a>
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -41,25 +54,27 @@
                         </li>
                     </ul>
                 </div>
-                <div class="dropdown dropleft">
-                    <button class="btn btn-primary bg-transparent border-0" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- Dropdown Menu -->
+                <div class="dropdown">
+                    <button class="btn btn-primary bg-transparent border-0 dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="Assets/Icons/menu.svg" alt="Menu">
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
                             Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret">
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Solved
-                            <img src="Assets/Icons/caret-fill.svg" alt="Caret"></a>
+                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                            Solved <img src="Assets/Icons/caret-fill.svg" alt="Caret">
+                        </a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
     <main class="d-flex justify-content-between align-items-center" style="height: 100%;">
-        <section class="text-left ml-5" style="width: 60%;">
+        <section class="text-left ms-5" style="width: 58%;">
             <h4 style="color: white; font-family: 'IBM Plex Mono', monospace; font-weight: bold;">Welcome to the Code
                 Conversion Challenge!</h4><br>
             <p style="color: white; font-family: 'IBM Plex Mono', monospace;">Are you ready to put your programming
@@ -71,7 +86,7 @@
                         <div class="challenge-box">
                             <h5>BEGINNER</h5>
                             <p>Simple programs, syntax conversion, and basic logic.</p>
-                            <span class="badge badge-primary">Free</span>
+                            <span class="badge bg-primary">Free</span>
                         </div>
                     </a>
                 </div>
@@ -80,7 +95,7 @@
                         <div class="challenge-box">
                             <h5>INTERMEDIATE</h5>
                             <p>Applying OOP principles and data structure transformations.</p>
-                            <span class="badge badge-warning">Premium</span>
+                            <span class="badge bg-warning">Premium</span>
                         </div>
                     </a>
                 </div>
@@ -89,26 +104,27 @@
                         <div class="challenge-box">
                             <h5>ADVANCED</h5>
                             <p>Complex algorithms and advanced concepts.</p>
-                            <span class="badge badge-danger">Premium</span>
+                            <span class="badge bg-danger">Premium</span>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
-        <section class="text-right mr-5" style="width: 35%;">
+        <section class="text-right me-5" style="width: 35%;">
             <img src="Assets/images/2989869.jpg" alt="Code Conversion Challenge"
                 style="width: 80%; height: 100%; object-fit: contain;border-radius: 3.1%;">
         </section>
 
         <!-- Sidebar -->
-        <aside id="sidebar" class="bg-dark text-white d-flex flex-column" style="height: 100vh;background-color: black !important;">
+        <aside id="sidebar" class="bg-dark text-white d-flex flex-column"
+            style="height: 100vh;background-color: black !important;">
             <div class="p-3">
                 <h5>Code Conversion</h5>
                 <ul class="nav flex-column">
                     <!-- Top Section -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white" data-toggle="modal"
-                            data-target="#settingsModal">Settings</a>
+                        <a href="#" class="nav-link text-white" data-bs-toggle="modal"
+                            data-bs-target="#settingsModal">Settings</a>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link text-white">Support</a></li>
                     <div class="dropdown-divider"></div>
@@ -150,9 +166,9 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap 5 JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script>
         document.getElementById('sidebarToggle').addEventListener('click', function () {
             const sidebar = document.getElementById('sidebar');
@@ -194,11 +210,14 @@
         function showTab(event, tab) {
             event.preventDefault();
             const content = {
-                general: "<h6>Chat</h6><p>Show tokens usage in chat</p>",
-                profile: "<h6>Details</h6><p>Email</p><p>Phone</p>",
-                tokens: "<h6>Usage</h6><p>Available Token</p><p>Total Tokens</p>",
-                editor: "<h6>Edit</h6><p>Line warpping</p>",
-                sessions: "<h6>Active Logins</h6><p>location : chennai </p><p>Time : 2:29pm</p><p>Device : Chrome(windows)</p>"
+                general: `<h6>Chat</h6><p>Show tokens usage in chat<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+</div></p>`,
+                profile: `<h6>Details</h6><p>Email</p><p>Phone</p>`,
+                tokens: `<h6>Usage</h6><p>Available Token</p><p>Total Tokens</p>`,
+                editor: `<h6>Edit</h6><p>Line warpping</p>`,
+                sessions: `<h6>Active Logins</h6><p>location : chennai </p><p>Time : 2:29pm</p><p>Device : Chrome(windows)</p>`
             };
             document.getElementById("settingsContent").innerHTML = content[tab];
 
@@ -207,6 +226,7 @@
             event.target.classList.add("active");
         }
     </script>
+    
 </body>
 
 </html>
