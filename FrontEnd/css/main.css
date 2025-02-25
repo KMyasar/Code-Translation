@@ -8,11 +8,15 @@ main {
   font-family: 'Poppins', sans-serif;
 }
 .challenge-box {
-  background-color: white;
+  background: linear-gradient(135deg, #0A2A43, #1572A1); /* Gradient inspired by image */
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
+  color: white; /* Ensures good text contrast */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Adds slight depth */
 }
+
+
 .form-container {
   padding: 40px;
   width: 500px;
@@ -63,10 +67,6 @@ body {
   position: relative;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(0,212,255,1) 100%);
-  /* background-image: url("../Assets/images/bg-image.jpg"); */
-  /* background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
 }
 
 #sidebar {
@@ -80,13 +80,23 @@ body {
   padding-top: 60px;
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: black;
   /* Prevent horizontal overflow */
+}
+#sidebarToggle {
+  position: fixed;
+  left: 10px; /* Initial position */
+  bottom: 20px;
+  z-index: 1001;
+  width: 50px;
+  height: 50px;
+  transition: left 0.3s; /* Smooth transition */
 }
 
 main {
   flex: 1;
   margin-left: 0;
-  transition: 0.3s;
+  transition: margin-left 0.3s;
   padding-bottom: 60px;
   /* Prevent footer overlap */
 }

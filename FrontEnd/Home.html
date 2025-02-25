@@ -12,8 +12,10 @@
     <style>
         /* Custom CSS for dropdown positioning */
         .dropdown-menu-custom {
-            left: -100px !important; /* Adjust this value to align the dropdown */
-            top: 100% !important; /* Position below the icon */
+            left: -100px !important;
+            /* Adjust this value to align the dropdown */
+            top: 100% !important;
+            /* Position below the icon */
         }
 
         /* Custom CSS for input boxes */
@@ -39,7 +41,8 @@
 
         /* Custom CSS for Tokens section */
         .token-label {
-            margin-left: auto; /* Push the label to the right */
+            margin-left: auto;
+            /* Push the label to the right */
             font-weight: bold;
         }
 
@@ -51,16 +54,64 @@
 
         /* Custom CSS for version label */
         .version-label {
-            margin-left: auto; /* Push the label to the right */
+            margin-left: auto;
+            /* Push the label to the right */
             font-weight: bold;
-            color: #28a745; /* Green for Premium, change to #dc3545 for Free */
+            color: #28a745;
+            /* Green for Premium, change to #dc3545 for Free */
         }
 
         /* Increase the height of the settings modal */
         .settings-modal-dialog {
-            min-height: 700px; /* Adjust this value as needed */
+            min-height: 700px;
+            /* Adjust this value as needed */
             height: auto;
         }
+
+        /*
+        Settings close icon
+        */
+        /* Custom close button styles */
+        .btn-close-custom {
+            background: none;
+            /* Remove default background */
+            border: none;
+            /* Remove border */
+            padding: 0;
+            /* Remove padding */
+            cursor: pointer;
+            /* Add pointer cursor */
+            opacity: 1;
+            /* Ensure it's fully visible */
+        }
+
+        .btn-close-custom svg {
+            width: 24px;
+            /* Set icon size */
+            height: 24px;
+            color: white;
+            /* Set icon color to white */
+            stroke: white;
+            /* Ensure the stroke is white */
+        }
+
+        .btn-close-custom:hover svg {
+            color: #007bff;
+            /* Change color on hover */
+            stroke: #007bff;
+            /* Change stroke color on hover */
+        }
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); } /* Moves up */
+            100% { transform: translateY(0px); } /* Moves back down */
+        }
+        
+        .moving-image {
+            animation: floatUpDown 1.5s ease-in-out infinite; /* Reduced duration to 1.5s */
+        }
+        
+        
     </style>
 </head>
 
@@ -72,8 +123,9 @@
                 <img src="Assets/images/Logo.svg" alt="Logo">
             </a>
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -120,7 +172,7 @@
                 skills to the test? The Code Conversion Challenge pushes your ability to transform code from one
                 programming language to another while maintaining functionality, efficiency, and readability.</p>
             <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
+                <div class="col-md-4" >
                     <a href="beginner-taskpage.html" class="text-decoration-none">
                         <div class="challenge-box">
                             <h5>BEGINNER</h5>
@@ -149,11 +201,15 @@
                 </div>
             </div>
         </section>
-        <section class="text-right me-5" style="width: 35%;">
-            <img src="Assets/images/2989869.jpg" alt="Code Conversion Challenge"
-                style="width: 80%; height: 100%; object-fit: contain;border-radius: 3.1%;">
+        <section style="width: 35%; float: left; margin-left: 20px;">
+            <img src="Assets/images/tech boi img.jpg" alt="Code Conversion Challenge"
+                class="moving-image"
+                style="width: 80%; height: 100%; object-fit: contain; border-radius: 3.1%;">
         </section>
-
+        
+        
+        
+ 
         <!-- Sidebar -->
         <aside id="sidebar" class="bg-dark text-white d-flex flex-column"
             style="height: 100vh;background-color: black !important;">
@@ -166,7 +222,6 @@
                             data-bs-target="#settingsModal">Settings</a>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link text-white">Support</a></li>
-                    <div class="dropdown-divider"></div>
                 </ul>
             </div>
 
@@ -184,8 +239,7 @@
         </aside>
 
         <!-- Sidebar Toggle Button -->
-        <button id="sidebarToggle" class="btn position-fixed text-white"
-            style="left: 10px; bottom: 20px; z-index: 1001; width: 50px; height: 50px;">
+        <button id="sidebarToggle" class="btn position-fixed text-white">
             <img src="Assets/Icons/sidebar.svg" alt="Open" id="openIcon" style="display: block;">
             <img src="Assets/Icons/sidebar.svg" alt="Close" id="closeIcon" style="display: none;">
         </button>
@@ -210,11 +264,19 @@
     <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered settings-modal-dialog"
             style="max-width: 35%; width: auto; resize: both; overflow: auto;">
-            <div class="modal-content" style="background-color: rgba(29, 31, 39, 0.97); color: aliceblue; height: 100%;">
+            <div class="modal-content"
+                style="background-color: rgba(29, 31, 39, 0.97); color: aliceblue; height: 100%;">
                 <div class="modal-header" style="color: aliceblue;">
                     <h5 class="modal-title" id="settingsModalLabel">Settings <img src="Assets/Icons/icons8-settings.svg"
                             alt="" style="height: 25px;"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: aliceblue;"></button>
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-x">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -254,7 +316,8 @@
                                     <div class="d-flex align-items-center">
                                         <p class="mb-0">Show tokens usage in chat</p>
                                         <div class="form-check form-switch ms-auto">
-                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="flexSwitchCheckDefault">
                                             <label class="form-check-label" for="flexSwitchCheckDefault"></label>
                                         </div>
                                     </div>
@@ -265,11 +328,13 @@
                                     <h6>Profile Details</h6>
                                     <div class="mb-3">
                                         <label for="emailInput" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" value="example@example.com">
+                                        <input type="email" class="form-control" id="emailInput"
+                                            placeholder="Enter your email" value="example@example.com">
                                     </div>
                                     <div class="mb-3">
                                         <label for="phoneInput" class="form-label">Phone</label>
-                                        <input type="tel" class="form-control" id="phoneInput" placeholder="Enter your phone number" value="+1234567890">
+                                        <input type="tel" class="form-control" id="phoneInput"
+                                            placeholder="Enter your phone number" value="+1234567890">
                                     </div>
                                     <!-- Save Button -->
                                     <div class="save-button-container">
@@ -291,11 +356,13 @@
                                     <!-- Current Version Label -->
                                     <div class="d-flex align-items-center">
                                         <p class="mb-0">Current Version</p>
-                                        <span class="version-label">Free</span> <!-- Change to "Premium" if applicable -->
+                                        <span class="version-label">Free</span>
+                                        <!-- Change to "Premium" if applicable -->
                                     </div>
                                     <!-- Upgrade to Premium Button -->
                                     <div class="upgrade-button-container">
-                                        <button type="button" class="btn btn-warning" onclick="upgradeToPremium()">Upgrade to Premium</button>
+                                        <button type="button" class="btn btn-warning"
+                                            onclick="upgradeToPremium()">Upgrade to Premium</button>
                                     </div>
                                 </div>
 
@@ -305,7 +372,8 @@
                                     <div class="d-flex align-items-center">
                                         <p class="mb-0">Enable line wrapping</p>
                                         <div class="form-check form-switch ms-auto">
-                                            <input class="form-check-input" type="checkbox" role="switch" id="lineWrappingSwitch">
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="lineWrappingSwitch">
                                             <label class="form-check-label" for="lineWrappingSwitch"></label>
                                         </div>
                                     </div>
