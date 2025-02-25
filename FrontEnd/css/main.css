@@ -1,11 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* Import Boostrap 5 CSS files */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+*{
+  font-family: 'Poppins', sans-serif;
+}
 html,
 main {
   height: 100vh;
 }
-*{
-  font-family: 'Poppins', sans-serif;
+main {
+  flex: 1;
+  margin-left: 0;
+  transition: margin-left 0.3s;
+  padding-bottom: 60px;
+  /* Prevent footer overlap */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+/* Custom CSS for dropdown positioning */
+.dropdown-menu-custom {
+  left: -100px !important;
+  /* Adjust this value to align the dropdown */
+  top: 100% !important;
+  /* Position below the icon */
 }
 .challenge-box {
   background: linear-gradient(135deg, #0A2A43, #1572A1); /* Gradient inspired by image */
@@ -25,16 +50,6 @@ main {
   border-radius: 10px;
   margin: 0 auto;
   text-align: center;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #555;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
 }
 
 .btn-sign {
@@ -93,13 +108,7 @@ body {
   transition: left 0.3s; /* Smooth transition */
 }
 
-main {
-  flex: 1;
-  margin-left: 0;
-  transition: margin-left 0.3s;
-  padding-bottom: 60px;
-  /* Prevent footer overlap */
-}
+
 
 .footer {
   background-color: transparent;
@@ -153,4 +162,52 @@ main {
 
 .form-container a:hover {
   text-decoration: underline;
+}
+nav {
+  padding: 10px;
+  font-size: 18px;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+.level {
+  background: gray;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.prompt-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.code-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.code-box {
+  width: 50%;
+  padding: 20px;
+  border-right: 1px solid white;
+  text-align: left;
+}
+.code-box:last-child {
+  border-right: none;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-family: monospace;
 }
