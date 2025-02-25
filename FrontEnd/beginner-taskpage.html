@@ -1,128 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Conversion Challenge</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/task.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script>
-        function updateCode() {
-            let codeExamples = {
-                'Python': 'def check_odd_even(n):\n    return "Odd" if n % 2 else "Even"',
-                'C++': '#include<iostream>\nusing namespace std;\nstring checkOddEven(int n) {\n    return (n % 2) ? "Odd" : "Even";\n}',
-                'Java': 'public class Main {\n    static String checkOddEven(int n) {\n        return (n % 2 != 0) ? "Odd" : "Even";\n    }\n}'
-            };
-            let selectedLang = document.getElementById("language").value;
-            document.getElementById("code-display").value = codeExamples[selectedLang] || "";
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Conversion Challenge</title>
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    .container {
+    margin: 50px auto !important;
+    width: 60% !important; /* Imporant to avoid Css override*/
+    color: white !important;
+    }
+    /* Custom CSS for input boxes */
+    .form-control {
+      background-color: #2a2e3a !important;
+      color: white !important;
+      border: 1px solid #444 !important;
+    }
+
+    .form-control:focus {
+      background-color: #2a2e3a !important;
+      color: white !important;
+      border-color: #007bff !important;
+      box-shadow: none !important;
+    }
+
+
+  </style>
+  <script>
+    function updateCode() {
+      let codeExamples = {
+        'Python': 'def check_odd_even(n):\n    return "Odd" if n % 2 else "Even"',
+        'C++': '#include<iostream>\nusing namespace std;\nstring checkOddEven(int n) {\n    return (n % 2) ? "Odd" : "Even";\n}',
+        'Java': 'public class Main {\n    static String checkOddEven(int n) {\n        return (n % 2 != 0) ? "Odd" : "Even";\n    }\n}'
+      };
+      let selectedLang = document.getElementById("language").value;
+      document.getElementById("code-display").value = codeExamples[selectedLang] || "";
+    }
+  </script>
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="opacity: 0.5;">
-            <div class="logo"></div>
-            <a class="navbar-brand" href="Home.html">
-                <img src="Assets/images/Logo.svg" alt="Logo">
-            </a>
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="Home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="price.html">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Services</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="dropdown dropleft">
-                    <button class="btn btn-primary bg-transparent border-0" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="Assets/Icons/menu.svg" alt="Menu">
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
-                            Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret">
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Solved
-                            <img src="Assets/Icons/caret-fill.svg" alt="Caret"></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <div class="container">
-            <h1>What do you want to convert</h1>
-            <h3>Analyse, Code, Check</h3>
-            <br>  <!-- Added space after "Analyse, Code, Check" -->
-            <div class="prompt-box">
-                Write a function to check if the entered integer is odd or even.<br>
-                Return "Odd" if the number is odd and "Even" if it's even.
-            </div>
-            <br>
-            <div class="code-container">
-                <div class="code-box">
-                    <select id="language" class="dropdown" onchange="updateCode()" style="background: white;
-                    color: black;
-                    border-radius: 5px;
-                    padding: 5px;
-                    cursor: pointer;
-                    width: 100%;">
-                        <option>Select</option>
-                        <option>Python</option>
-                        <option>C++</option>
-                        <option>Java</option>
-                    </select>
-                    <br>
-                    <textarea id="code-display" readonly></textarea>
-                </div>
-                <div class="code-box">
-                    <textarea placeholder="Type your code here..."></textarea>
-                    <button class="btn btn-primary mt-2 float-right">Submit</button> <!-- Submit button added -->
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer fixed-bottom">
+  <!-- Header with Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="opacity: 0.5;">
+        <a class="navbar-brand" href="Home.html">
+            <img src="Assets/images/Logo.svg" alt="Logo">
+        </a>
         <div class="container-fluid">
-            <div class="d-flex justify-content-end py-3">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><img src="Assets/Icons/icons8-instagram.svg" alt="Instagram"></li>
-                    <li class="list-inline-item"><img src="Assets/Icons/x.svg" alt="X"></li>
-                    <li class="list-inline-item"><img src="Assets/Icons/git.svg" alt="GitHub"></li>
-                    <li class="list-inline-item"><a class="text-white" href="#">Terms of Service</a></li>
-                    <li class="list-inline-item"><a class="text-white" href="#">Privacy Policy</a></li>
-                    <li class="list-inline-item"><a class="text-white" href="#">Code Conversion</a></li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="price.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Services</a>
+                    </li>
                 </ul>
             </div>
+            <div class="dropdown">
+                <button class="btn btn-primary bg-transparent border-0" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="Assets/Icons/menu.svg" alt="Menu">
+                </button>
+                <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                        Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret">
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item d-flex justify-content-between align-items-center" href="#">Solved
+                        <img src="Assets/Icons/caret-fill.svg" alt="Caret"></a>
+                </div>
+            </div>
         </div>
-    </footer>
+    </nav>
+</header>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Main Content -->
+  <main>
+    <section class="container">
+      <h1>What do you want to convert</h1>
+      <h3>Analyse, Code, Check</h3>
+      <br>
+      <div class="prompt-box">
+        Write a function to check if the entered integer is odd or even.<br>
+        Return "Odd" if the number is odd and "Even" if it's even.
+      </div>
+      <br>
+      <div class="code-container">
+        <div class="code-box">
+          <select id="language" class="form-select" onchange="updateCode()">
+            <option>Select</option>
+            <option>Python</option>
+            <option>C++</option>
+            <option>Java</option>
+          </select>
+          <br>
+          <textarea id="code-display" readonly></textarea>
+        </div>
+        <div class="code-box">
+          <textarea placeholder="Type your code here..."></textarea>
+          <button class="btn btn-primary mt-2 float-end">Submit</button>
+        </div>
+      </div>
+    </section>
+     <!-- Sidebar -->
+     <aside id="sidebar" class="bg-dark text-white d-flex flex-column"
+     style="height: 100vh;background-color: black !important;">
+     <div class="p-3">
+         <h5>Code Conversion</h5>
+         <ul class="nav flex-column">
+             <!-- Top Section -->
+             <li class="nav-item">
+                 <a href="#" class="nav-link text-white" data-toggle="modal"
+                     data-target="#settingsModal">Settings</a>
+             </li>
+             <li class="nav-item"><a href="#" class="nav-link text-white">Support</a></li>
+             <div class="dropdown-divider"></div>
+         </ul>
+     </div>
+
+     <!-- Spacer to push the bottom content down -->
+     <div class="flex-grow-1"></div>
+
+     <div class="p-3">
+         <ul class="nav flex-column">
+             <!-- Bottom Section -->
+             <li class="nav-item"><a href="#" class="nav-link text-white">Subscription</a></li>
+             <li class="nav-item"><a href="#" class="nav-link text-white">Mohamed</a></li>
+             <li class="nav-item"><a href="#" class="nav-link text-white">Sign out</a></li>
+         </ul>
+     </div>
+ </aside>
+
+ <!-- Sidebar Toggle Button -->
+ <button id="sidebarToggle" class="btn position-fixed text-white"
+     style="left: 10px; bottom: 20px; z-index: 1001; width: 50px; height: 50px;">
+     <img src="Assets/Icons/sidebar.svg" alt="Open" id="openIcon" style="display: block;">
+     <img src="Assets/Icons/sidebar.svg" alt="Close" id="closeIcon" style="display: none;">
+ </button>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer fixed-bottom">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-end py-3">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item"><img src="Assets/Icons/icons8-instagram.svg" alt="Instagram"></li>
+          <li class="list-inline-item"><img src="Assets/Icons/x.svg" alt="X"></li>
+          <li class="list-inline-item"><img src="Assets/Icons/git.svg" alt="GitHub"></li>
+          <li class="list-inline-item"><a class="text-white" href="#">Terms of Service</a></li>
+          <li class="list-inline-item"><a class="text-white" href="#">Privacy Policy</a></li>
+          <li class="list-inline-item"><a class="text-white" href="#">Code Conversion</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Sidebar toggle functionality
+    document.getElementById('sidebarToggle').addEventListener('click', function () {
+      const sidebar = document.getElementById('sidebar');
+      const openIcon = document.getElementById('openIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      const main = document.querySelector('main');
+      const sidebarToggle = document.getElementById('sidebarToggle');
+
+      if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
+        sidebar.style.left = '0';
+        main.style.marginLeft = '250px';
+        openIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+        sidebarToggle.style.left = '200px';
+        sidebarToggle.style.bottom = "10px";
+      } else {
+        sidebar.style.left = '-250px';
+        main.style.marginLeft = '0';
+        openIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+        sidebarToggle.style.left = '10px';
+      }
+    });
+
+    // Ensure the close icon is hidden initially
+    document.getElementById('closeIcon').style.display = 'none';
+  </script>
 </body>
 </html>
