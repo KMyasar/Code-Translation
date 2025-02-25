@@ -101,6 +101,16 @@
             stroke: #007bff;
             /* Change stroke color on hover */
         }
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); } /* Moves up */
+            100% { transform: translateY(0px); } /* Moves back down */
+        }
+        
+        .moving-image {
+            animation: floatUpDown 1.5s ease-in-out infinite; /* Reduced duration to 1.5s */
+        }
+        
         
     </style>
 </head>
@@ -162,7 +172,7 @@
                 skills to the test? The Code Conversion Challenge pushes your ability to transform code from one
                 programming language to another while maintaining functionality, efficiency, and readability.</p>
             <div class="row justify-content-center mt-4">
-                <div class="col-md-4">
+                <div class="col-md-4" >
                     <a href="beginner-taskpage.html" class="text-decoration-none">
                         <div class="challenge-box">
                             <h5>BEGINNER</h5>
@@ -191,11 +201,15 @@
                 </div>
             </div>
         </section>
-        <section class="text-right me-5" style="width: 35%;">
-            <img src="Assets/images/2989869.jpg" alt="Code Conversion Challenge"
-                style="width: 80%; height: 100%; object-fit: contain;border-radius: 3.1%;">
+        <section style="width: 35%; float: left; margin-left: 20px;">
+            <img src="Assets/images/tech boi img.jpg" alt="Code Conversion Challenge"
+                class="moving-image"
+                style="width: 80%; height: 100%; object-fit: contain; border-radius: 3.1%;">
         </section>
-
+        
+        
+        
+ 
         <!-- Sidebar -->
         <aside id="sidebar" class="bg-dark text-white d-flex flex-column"
             style="height: 100vh;background-color: black !important;">
