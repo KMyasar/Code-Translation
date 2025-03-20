@@ -92,6 +92,52 @@ main {
     background-color: #333;
 }
 
+/* Sidebar toggle button styling */
+#sidebarToggle {
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
+  z-index: 1001;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff; /* Default color */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Change color and width on hover */
+#sidebarToggle:hover {
+  background-color: #0056b3; /* Darker shade */
+  width: 60px; /* Increase width */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 160px;
+  transition: all 0.3s ease;
+}
+
+/* Dropdown menu hover effect */
+.dropdown-menu a {
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #007bff;
+  color: white;
+  padding-left: 25px; /* Slight shift on hover */
+}
+
 footer {
     background-color: #000;
     padding: 1rem;
