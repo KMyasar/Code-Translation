@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Code Conversion Challenge</title>
+    <title>Solved Challenges - Code Conversion Challenge</title>
     <link rel="icon" href="Assets/Icons/icons8-registry-editor-96.png" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -37,84 +37,68 @@
             margin: 0 auto;
         }
 
-        .services-section {
+        .solved-section {
             margin-bottom: 50px;
         }
 
-        .services-section h2 {
+        .solved-section h2 {
             font-size: 2rem;
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .service-cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .service-card {
+        .solved-table {
+            width: 100%;
             background: linear-gradient(135deg, #0A2A43, #1572A1);
-            padding: 20px;
             border-radius: 10px;
-            width: 300px;
-            text-align: center;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
-        .service-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .solved-table th,
+        .solved-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .service-card p {
+        .solved-table th {
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+        }
+
+        .solved-table td {
             font-size: 0.9rem;
-            margin-bottom: 15px;
         }
 
-        .service-card .btn {
+        .solved-table .difficulty {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .difficulty.beginner {
+            background: #28a745;
+        }
+
+        .difficulty.intermediate {
+            background: #ffc107;
+        }
+
+        .difficulty.advanced {
+            background: #dc3545;
+        }
+
+        .solved-table .btn-view {
+            background: #007bff;
+            color: white;
             padding: 5px 15px;
             border-radius: 15px;
             text-decoration: none;
             font-size: 0.9rem;
         }
 
-        .btn-free {
-            background: #007bff;
-            color: white;
-        }
-
-        .btn-premium {
-            background: #dc3545;
-            color: white;
-        }
-
-        .cta-section {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section .btn {
-            background: #007bff;
-            color: white;
-            padding: 10px 30px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .cta-section .btn:hover {
+        .solved-table .btn-view:hover {
             background: #0056b3;
         }
 
@@ -177,7 +161,7 @@
                             <a class="nav-link text-white" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white active" href="services.html">Services</a>
+                            <a class="nav-link text-white" href="services.html">Services</a>
                         </li>
                     </ul>
                 </div>
@@ -191,8 +175,9 @@
                             Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret">
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="solved.html">Solved
-                            <img src="Assets/Icons/caret-fill.svg" alt="Caret"></a>
+                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="solved.html">
+                            Solved <img src="Assets/Icons/caret-fill.svg" alt="Caret">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -203,46 +188,53 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section">
-            <h1>Our Services</h1>
+            <h1>Your Solved Challenges</h1>
             <p>
-                Discover the range of services offered by the Code Conversion Challenge to help you master code conversion and improve your programming skills.
+                Review the challenges you've successfully completed. Click "View Solution" to see your submitted code and learn from your past work.
             </p>
         </section>
 
-        <!-- Services Section -->
-        <section class="services-section">
-            <h2>Explore Our Services</h2>
-            <div class="service-cards">
-                <div class="service-card">
-                    <h3>Free Challenges</h3>
-                    <p>Access a variety of beginner-level challenges for free to start your coding journey.</p>
-                    <a href="#" class="btn btn-free">Get Started</a>
-                </div>
-                <div class="service-card">
-                    <h3>Premium Challenges</h3>
-                    <p>Unlock intermediate and advanced challenges with a premium subscription.</p>
-                    <a href="price.html" class="btn btn-premium">Upgrade Now</a>
-                </div>
-                <div class="service-card">
-                    <h3>Progress Tracking</h3>
-                    <p>Track your performance with detailed stats on challenges completed and time spent.</p>
-                    <a href="progress.html" class="btn btn-free">View Progress</a>
-                </div>
-                <div class="service-card">
-                    <h3>Community Access</h3>
-                    <p>Join our community to collaborate, share solutions, and get support from other coders.</p>
-                    <a href="#" class="btn btn-free">Join Now</a>
-                </div>
+        <!-- Solved Challenges Section -->
+        <section class="solved-section">
+            <h2>Completed Challenges</h2>
+            <div class="table-responsive">
+                <table class="solved-table">
+                    <thead>
+                        <tr>
+                            <th>Challenge Name</th>
+                            <th>Difficulty</th>
+                            <th>Date Solved</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FizzBuzz Converter</td>
+                            <td><span class="difficulty beginner">Beginner</span></td>
+                            <td>2025-03-15</td>
+                            <td><a href="#" class="btn-view">View Solution</a></td>
+                        </tr>
+                        <tr>
+                            <td>Array Sorter</td>
+                            <td><span class="difficulty intermediate">Intermediate</span></td>
+                            <td>2025-03-10</td>
+                            <td><a href="#" class="btn-view">View Solution</a></td>
+                        </tr>
+                        <tr>
+                            <td>Graph Traversal</td>
+                            <td><span class="difficulty advanced">Advanced</span></td>
+                            <td>2025-03-05</td>
+                            <td><a href="#" class="btn-view">View Solution</a></td>
+                        </tr>
+                        <tr>
+                            <td>Palindrome Checker</td>
+                            <td><span class="difficulty beginner">Beginner</span></td>
+                            <td>2025-02-28</td>
+                            <td><a href="#" class="btn-view">View Solution</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="cta-section">
-            <h2>Ready to Take Your Skills to the Next Level?</h2>
-            <p>
-                Sign up today to start converting code and mastering new programming languages with the Code Conversion Challenge.
-            </p>
-            <a href="#" class="btn">Sign Up Now</a>
         </section>
 
         <!-- Sidebar -->
