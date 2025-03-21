@@ -1,357 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services - Code Conversion Challenge</title>
-    <link rel="icon" href="Assets/Icons/icons8-registry-editor-96.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      rel="icon"
+      href="Assets/Icons/icons8-registry-editor-96.png"
+      type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
     <style>
-        body {
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(0,212,255,1) 100%);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
+      body {
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 17%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
 
-        main {
-            padding: 50px;
-            min-height: 100vh;
-        }
+      main {
+        padding: 50px;
+        min-height: 100vh;
+      }
 
-        .hero-section {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+      .hero-section {
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-        .hero-section h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+      .hero-section h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
 
-        .hero-section p {
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+      .hero-section p {
+        font-size: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
 
-        .services-section {
-            margin-bottom: 50px;
-        }
+      .services-section {
+        margin-bottom: 50px;
+      }
 
-        .services-section h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+      .services-section h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 30px;
+      }
 
-        .service-cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+      .service-cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
 
-        .service-card {
-            background: linear-gradient(135deg, #0A2A43, #1572A1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
+      .service-card {
+        background: linear-gradient(135deg, #0a2a43, #1572a1);
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      }
 
-        .service-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
+      .service-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
 
-        .service-card p {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
+      .service-card p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
 
-        .service-card .btn {
-            padding: 5px 15px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+      .service-card .btn {
+        padding: 5px 15px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
 
-        .btn-free {
-            background: #007bff;
-            color: white;
-        }
+      .btn-free {
+        background: #007bff;
+        color: white;
+      }
 
-        .btn-premium {
-            background: #dc3545;
-            color: white;
-        }
+      .btn-premium {
+        background: #dc3545;
+        color: white;
+      }
 
-        .cta-section {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+      .cta-section {
+        text-align: center;
+        margin-bottom: 50px;
+      }
 
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+      .cta-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
 
-        .cta-section p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
+      .cta-section p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
 
-        .cta-section .btn {
-            background: #007bff;
-            color: white;
-            padding: 10px 30px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 1rem;
-        }
+      .cta-section .btn {
+        background: #007bff;
+        color: white;
+        padding: 10px 30px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 1rem;
+      }
 
-        .cta-section .btn:hover {
-            background: #0056b3;
-        }
+      .cta-section .btn:hover {
+        background: #0056b3;
+      }
 
-        /* Sidebar styles */
-        #sidebar {
-            position: fixed;
-            left: -250px;
-            top: 0;
-            width: 250px;
-            height: 100vh;
-            background-color: black !important;
-            transition: left 0.3s ease;
-        }
+      /* Sidebar styles */
+      #sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: black !important;
+        transition: left 0.3s ease;
+      }
 
-        #sidebarToggle {
-            bottom: 20px;
-            left: 10px;
-            z-index: 1001;
-            width: 50px;
-            height: 50px;
-            transition: left 0.3s ease, background-color 0.3s ease;
-        }
+      #sidebarToggle {
+        bottom: 20px;
+        left: 10px;
+        z-index: 1001;
+        width: 50px;
+        height: 50px;
+        transition: left 0.3s ease, background-color 0.3s ease;
+      }
 
-        #sidebarToggle:hover {
-            background-color: #0056b3;
-        }
+      #sidebarToggle:hover {
+        background-color: #0056b3;
+      }
 
-        /* Ensure dropdown menu is above toggle button */
-        .dropdown-menu-custom {
-            z-index: 1002;
-        }
+      /* Ensure dropdown menu is above toggle button */
+      .dropdown-menu-custom {
+        z-index: 1002;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="opacity: 0.5;">
-            <a class="navbar-brand" href="Home.html">
-                <img src="Assets/images/Logo.svg" alt="Logo">
-            </a>
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="Home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="price.html">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="overview.html">Overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white active" href="services.html">Services</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-primary bg-transparent border-0" type="button" id="dropdownMenuButton"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="Assets/Icons/menu.svg" alt="Menu">
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="progress.html">
-                            Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret">
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="solved.html">Solved
-                            <img src="Assets/Icons/caret-fill.svg" alt="Caret"></a>
-                    </div>
-                </div>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        style="opacity: 0.5">
+        <a class="navbar-brand" href="Home.html">
+          <img src="Assets/images/Logo.svg" alt="Logo" />
+        </a>
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="Home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="price.html">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="overview.html">Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white active" href="services.html"
+                  >Services</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-primary bg-transparent border-0"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">
+              <img src="Assets/Icons/menu.svg" alt="Menu" />
+            </button>
+            <div
+              class="dropdown-menu dropdown-menu-custom"
+              aria-labelledby="dropdownMenuButton">
+              <a
+                class="dropdown-item d-flex justify-content-between align-items-center"
+                href="progress.html">
+                Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret" />
+              </a>
+              <div class="dropdown-divider"></div>
+              <a
+                class="dropdown-item d-flex justify-content-between align-items-center"
+                href="solved.html"
+                >Solved <img src="Assets/Icons/caret-fill.svg" alt="Caret"
+              /></a>
             </div>
-        </nav>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <h1>Our Services</h1>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h1>Our Services</h1>
+        <p>
+          Discover the range of services offered by the Code Conversion
+          Challenge to help you master code conversion and improve your
+          programming skills.
+        </p>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-section">
+        <h2>Explore Our Services</h2>
+        <div class="service-cards">
+          <div class="service-card">
+            <h3>Free Challenges</h3>
             <p>
-                Discover the range of services offered by the Code Conversion Challenge to help you master code conversion and improve your programming skills.
+              Access a variety of beginner-level challenges for free to start
+              your coding journey.
             </p>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services-section">
-            <h2>Explore Our Services</h2>
-            <div class="service-cards">
-                <div class="service-card">
-                    <h3>Free Challenges</h3>
-                    <p>Access a variety of beginner-level challenges for free to start your coding journey.</p>
-                    <a href="#" class="btn btn-free">Get Started</a>
-                </div>
-                <div class="service-card">
-                    <h3>Premium Challenges</h3>
-                    <p>Unlock intermediate and advanced challenges with a premium subscription.</p>
-                    <a href="price.html" class="btn btn-premium">Upgrade Now</a>
-                </div>
-                <div class="service-card">
-                    <h3>Progress Tracking</h3>
-                    <p>Track your performance with detailed stats on challenges completed and time spent.</p>
-                    <a href="progress.html" class="btn btn-free">View Progress</a>
-                </div>
-                <div class="service-card">
-                    <h3>Community Access</h3>
-                    <p>Join our community to collaborate, share solutions, and get support from other coders.</p>
-                    <a href="#" class="btn btn-free">Join Now</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="cta-section">
-            <h2>Ready to Take Your Skills to the Next Level?</h2>
+            <a href="#" class="btn btn-free">Get Started</a>
+          </div>
+          <div class="service-card">
+            <h3>Premium Challenges</h3>
             <p>
-                Sign up today to start converting code and mastering new programming languages with the Code Conversion Challenge.
+              Unlock intermediate and advanced challenges with a premium
+              subscription.
             </p>
-            <a href="#" class="btn">Sign Up Now</a>
-        </section>
+            <a href="price.html" class="btn btn-premium">Upgrade Now</a>
+          </div>
+          <div class="service-card">
+            <h3>Progress Tracking</h3>
+            <p>
+              Track your performance with detailed stats on challenges completed
+              and time spent.
+            </p>
+            <a href="progress.html" class="btn btn-free">View Progress</a>
+          </div>
+          <div class="service-card">
+            <h3>Community Access</h3>
+            <p>
+              Join our community to collaborate, share solutions, and get
+              support from other coders.
+            </p>
+            <a href="#" class="btn btn-free">Join Now</a>
+          </div>
+        </div>
+      </section>
 
-        <!-- Sidebar -->
-        <aside id="sidebar" class="bg-dark text-white d-flex flex-column">
-            <div class="p-3">
-                <h5>Code Conversion</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" data-bs-toggle="modal"
-                            data-bs-target="#settingsModal">Settings</a>
-                    </li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Support</a></li>
-                </ul>
-            </div>
-            <div class="flex-grow-1"></div>
-            <div class="p-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Subscription</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Mohamed</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white">Sign out</a></li>
-                </ul>
-            </div>
-        </aside>
+      <!-- Call to Action Section -->
+      <section class="cta-section">
+        <h2>Ready to Take Your Skills to the Next Level?</h2>
+        <p>
+          Sign up today to start converting code and mastering new programming
+          languages with the Code Conversion Challenge.
+        </p>
+        <a href="#" class="btn">Sign Up Now</a>
+      </section>
 
-        <!-- Sidebar Toggle Button -->
-        <button id="sidebarToggle" class="btn position-fixed text-white">
-            <img src="Assets/Icons/sidebar.svg" alt="Open" id="openIcon" style="display: block;">
-            <img src="Assets/Icons/sidebar.svg" alt="Close" id="closeIcon" style="display: none;">
-        </button>
+      <!-- Sidebar -->
+      <aside id="sidebar" class="bg-dark text-white d-flex flex-column">
+        <div class="p-3">
+          <h5>Code Conversion</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a
+                href="#"
+                class="nav-link text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#settingsModal"
+                >Settings</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Support</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-grow-1"></div>
+        <div class="p-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Subscription</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Mohamed</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Sidebar Toggle Button -->
+      <button id="sidebarToggle" class="btn position-fixed text-white">
+        <img
+          src="Assets/Icons/sidebar.svg"
+          alt="Open"
+          id="openIcon"
+          style="display: block" />
+        <img
+          src="Assets/Icons/sidebar.svg"
+          alt="Close"
+          id="closeIcon"
+          style="display: none" />
+      </button>
     </main>
 
     <!-- Footer -->
     <footer class="footer fixed-bottom">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-end py-3">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><img src="Assets/Icons/icons8-instagram.svg" alt="Instagram"></li>
-                    <li class="list-inline-item"><img src="Assets/Icons/x.svg" alt="X"></li>
-                    <li class="list-inline-item"><img src="Assets/Icons/git.svg" alt="GitHub"></li>
-                    <li class="list-inline-item"><a class="text-white" href="#">Terms of Service</a></li>
-                    <li class="list-inline-item"><a class="text-white" href="#">Privacy Policy</a></li>
-                    <li class="list-inline-item"><a class="text-white" href="#">Code Conversion</a></li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <div class="d-flex justify-content-end py-3">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <img src="Assets/Icons/icons8-instagram.svg" alt="Instagram" />
+            </li>
+            <li class="list-inline-item">
+              <img src="Assets/Icons/x.svg" alt="X" />
+            </li>
+            <li class="list-inline-item">
+              <img src="Assets/Icons/git.svg" alt="GitHub" />
+            </li>
+            <li class="list-inline-item">
+              <a class="text-white" href="#" style="text-decoration: none"
+                >Terms of Service</a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a class="text-white" href="#" style="text-decoration: none"
+                >Privacy Policy</a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a class="text-white" href="#" style="text-decoration: none"
+                >Code Conversion</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </footer>
 
     <!-- Settings Modal -->
-    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="themeSelect" class="form-label">Theme</label>
-                            <select class="form-select" id="themeSelect">
-                                <option value="light">Light</option>
-                                <option value="dark">Dark</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="fontSize" class="form-label">Font Size</label>
-                            <input type="number" class="form-control" id="fontSize" value="16">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
+    <div
+      class="modal fade"
+      id="settingsModal"
+      tabindex="-1"
+      aria-labelledby="settingsModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="themeSelect" class="form-label">Theme</label>
+                <select class="form-select" id="themeSelect">
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="fontSize" class="form-label">Font Size</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="fontSize"
+                  value="16" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Bootstrap 5 JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script>
-        // Sidebar toggle functionality
-        document.getElementById('sidebarToggle').addEventListener('click', function () {
-            const sidebar = document.getElementById('sidebar');
-            const openIcon = document.getElementById('openIcon');
-            const closeIcon = document.getElementById('closeIcon');
-            const main = document.querySelector('main');
-            const sidebarToggle = document.getElementById('sidebarToggle');
+      // Sidebar toggle functionality
+      document
+        .getElementById("sidebarToggle")
+        .addEventListener("click", function () {
+          const sidebar = document.getElementById("sidebar");
+          const openIcon = document.getElementById("openIcon");
+          const closeIcon = document.getElementById("closeIcon");
+          const main = document.querySelector("main");
+          const sidebarToggle = document.getElementById("sidebarToggle");
 
-            if (sidebar.style.left === '-250px' || sidebar.style.left === '') {
-                sidebar.style.left = '0';
-                main.style.marginLeft = '250px';
-                openIcon.style.display = 'none';
-                closeIcon.style.display = 'block';
-                sidebarToggle.style.left = '200px';
-                sidebarToggle.style.bottom = '10px';
-            } else {
-                sidebar.style.left = '-250px';
-                main.style.marginLeft = '0';
-                openIcon.style.display = 'block';
-                closeIcon.style.display = 'none';
-                sidebarToggle.style.left = '10px';
-            }
+          if (sidebar.style.left === "-250px" || sidebar.style.left === "") {
+            sidebar.style.left = "0";
+            main.style.marginLeft = "250px";
+            openIcon.style.display = "none";
+            closeIcon.style.display = "block";
+            sidebarToggle.style.left = "200px";
+            sidebarToggle.style.bottom = "10px";
+          } else {
+            sidebar.style.left = "-250px";
+            main.style.marginLeft = "0";
+            openIcon.style.display = "block";
+            closeIcon.style.display = "none";
+            sidebarToggle.style.left = "10px";
+          }
         });
 
-        // Ensure the close icon is hidden initially
-        document.getElementById('closeIcon').style.display = 'none';
+      // Ensure the close icon is hidden initially
+      document.getElementById("closeIcon").style.display = "none";
     </script>
-</body>
-
+  </body>
 </html>
