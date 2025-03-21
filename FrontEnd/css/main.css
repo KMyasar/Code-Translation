@@ -73,6 +73,7 @@ input {
   background: white;
   color: black;
   padding: 10px;
+  /* margin-bottom: 0px; */
   border-radius: 15px;
   cursor: pointer;
 }
