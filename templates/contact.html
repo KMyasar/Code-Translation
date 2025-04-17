@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,9 +7,8 @@
     <title>Code Conversion Challenge</title>
     <link
       rel="icon"
-      href="Assets/Icons/icons8-registry-editor-96.png"
-      type="image/x-icon" />
-    <link rel="stylesheet" href="css/main.css" />
+      href="{% static 'Assets/Icons/icons8-registry-editor-96.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <!-- Bootstrap 5 CSS -->
     <style>
       /* Add these new styles for sidebar integration */
@@ -31,20 +31,11 @@
         color: whitesmoke;
       }
 
-<<<<<<< HEAD
       .left h1 span {
         background: linear-gradient(to right, #ff416c, #833ab4);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-=======
-        .left h1 span {
-            background: linear-gradient(to right, #ff416c, #833ab4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
->>>>>>> f5552a650deff3aa45a3688e4e535751de1d7ee0
 
       .contact-info {
         margin-top: 20px;
@@ -137,7 +128,7 @@
         style="opacity: 0.5">
         <div class="logo"></div>
         <a class="navbar-brand" href="Home.html">
-          <img src="Assets/images/Logo.svg" alt="Logo" />
+          <img src="{% static 'Assets/images/Logo.svg' %}" alt="Logo" />
         </a>
         <div class="container-fluid">
           <button
@@ -156,21 +147,29 @@
                 <a
                   class="nav-link active text-white"
                   aria-current="page"
-                  href="Home.html"
+                  href="{% url 'home' %}"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="price.html">Pricing</a>
+                <a class="nav-link text-white" href="{% url 'price' %}"
+                  >Pricing</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="overview.html">Overview</a>
+                <a class="nav-link text-white" href="{% url 'overview' %}"
+                  >Overview</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="contact.html">Contact</a>
+                <a class="nav-link text-white" href="{% url 'contact' %}"
+                  >Contact</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="services.html">Services</a>
+                <a class="nav-link text-white" href="{% url 'services' %}"
+                  >Services</a
+                >
               </li>
             </ul>
           </div>
@@ -182,7 +181,7 @@
               data-bs-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false">
-              <img src="Assets/Icons/menu.svg" alt="Menu" />
+              <img src="{% static 'Assets/Icons/menu.svg' %}" alt="Menu" />
             </button>
             <div
               class="dropdown-menu dropdown-menu-custom"
@@ -190,13 +189,19 @@
               <a
                 class="dropdown-item d-flex justify-content-between align-items-center"
                 href="#">
-                Progress <img src="Assets/Icons/caret-fill.svg" alt="Caret" />
+                Progress
+                <img
+                  src="{% static 'Assets/Icons/caret-fill.svg' %}"
+                  alt="Caret" />
               </a>
               <div class="dropdown-divider"></div>
               <a
                 class="dropdown-item d-flex justify-content-between align-items-center"
                 href="#"
-                >Solved <img src="Assets/Icons/caret-fill.svg" alt="Caret"
+                >Solved
+                <img
+                  src="{% static 'Assets/Icons/caret-fill.svg' %}"
+                  alt="Caret"
               /></a>
             </div>
           </div>
@@ -288,19 +293,19 @@
       <!-- Sidebar Toggle Button -->
       <button id="sidebarToggle" class="btn position-fixed text-white">
         <img
-          src="Assets/Icons/sidebar.svg"
+          src="{% static 'Assets/Icons/sidebar.svg' %}"
           alt="Open"
           id="openIcon"
           style="display: block" />
         <img
-          src="Assets/Icons/sidebar.svg"
+          src="{% static 'Assets/Icons/sidebar.svg' %}"
           alt="Close"
           id="closeIcon"
           style="display: none" />
       </button>
     </main>
 
-    <footer class="footer fixed-bottom">
+    <!-- <footer class="footer fixed-bottom">
       <div class="container-fluid">
         <div class="d-flex justify-content-end py-3">
           <ul class="list-inline mb-0">
@@ -314,17 +319,45 @@
               <img src="Assets/Icons/git.svg" alt="GitHub" />
             </li>
             <li class="list-inline-item">
-              <a class="text-white" href="#" style="text-decoration: none"
+              <a class="text-white" href="#">Terms of Service</a>
+            </li>
+            <li class="list-inline-item">
+              <a class="text-white" href="#">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a class="text-white" href="#">Code Conversion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer> -->
+    <footer class="footer fixed-bottom">
+      <div class="container-fluid">
+        <div class="d-flex justify-content-end py-3">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <img
+                src="{% static 'Assets/Icons/icons8-instagram.svg' %}"
+                alt="Instagram" />
+            </li>
+            <li class="list-inline-item">
+              <img src="{% static 'Assets/Icons/x.svg' %}" alt="X" />
+            </li>
+            <li class="list-inline-item">
+              <img src="{% static 'Assets/Icons/git.svg' %}" alt="GitHub" />
+            </li>
+            <li class="list-inline-item">
+              <a class="text-white" style="text-decoration: none" href="#"
                 >Terms of Service</a
               >
             </li>
             <li class="list-inline-item">
-              <a class="text-white" href="#" style="text-decoration: none"
+              <a class="text-white" style="text-decoration: none" href="#"
                 >Privacy Policy</a
               >
             </li>
             <li class="list-inline-item">
-              <a class="text-white" href="#" style="text-decoration: none"
+              <a class="text-white" style="text-decoration: none" href="#"
                 >Code Conversion</a
               >
             </li>
